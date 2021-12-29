@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({
 
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/signup.html");
-    console.log("home get");
 });
 
 app.post("/", function (req, res) {
@@ -40,7 +39,6 @@ app.post("/", function (req, res) {
 
     const httpsRequest = https.request(url, options, function (response) {
         response.on("data", function (data) {
-            console.log(JSON.parse(data));
         });
         
         if (response.statusCode === 200) {
@@ -57,9 +55,8 @@ app.post("/", function (req, res) {
 app.post("/failure", function (req, res) {
     res.redirect("/");
 });
-
-app.listen(process.env.PORT || 3000, function () {
-    console.log("server start");
+const port = 8080;
+app.listen(process.env.PORT || port, function () {
 });
 
 // const apikey = "5c47bdf4a06297b7e1085da2b93d6d93-us20";
