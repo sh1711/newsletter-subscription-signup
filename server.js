@@ -55,9 +55,6 @@ app.post("/", function (req, res) {
 app.post("/failure", function (req, res) {
     res.redirect("/");
 });
-const port = 8080;
+const port = 3000;
 app.listen(process.env.PORT || port, function () {
 });
-
-// const apikey = "5c47bdf4a06297b7e1085da2b93d6d93-us20";
-// const list_id = "34ab97f5e8";
